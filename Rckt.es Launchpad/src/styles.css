@@ -1,0 +1,199 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * RCKT — sistema operativo de crecimiento.
+ * Fondo casi negro (#0A0A0B), texto blanco hueso (#F5F2EC),
+ * un solo acento: naranja combustión (#FF4D00). Grises fríos para texto
+ * secundario. Tipografía: Space Grotesk (títulos y cuerpo) + JetBrains Mono
+ * (etiquetas de sistema, datos). Radios muy pequeños, sin sombras. Guiños
+ * de terminal.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 18px);
+  --radius-4xl: calc(var(--radius) + 24px);
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.125rem;
+  /* Casi negro / blanco hueso / naranja combustión / grises fríos. */
+  --background: oklch(0.11 0.003 260);     /* #0A0A0B */
+  --foreground: oklch(0.96 0.012 85);      /* #F5F2EC blanco hueso */
+  --card: oklch(0.14 0.004 260);
+  --card-foreground: oklch(0.96 0.012 85);
+  --popover: oklch(0.14 0.004 260);
+  --popover-foreground: oklch(0.96 0.012 85);
+  --primary: oklch(0.68 0.24 38);          /* #FF4D00 acento */
+  --primary-foreground: oklch(0.11 0.003 260);
+  --secondary: oklch(0.18 0.004 260);
+  --secondary-foreground: oklch(0.96 0.012 85);
+  --muted: oklch(0.18 0.004 260);
+  --muted-foreground: oklch(0.66 0.008 260);  /* gris frío para texto secundario */
+  --accent: oklch(0.68 0.24 38);
+  --accent-foreground: oklch(0.11 0.003 260);
+  --destructive: oklch(0.62 0.22 27);
+  --destructive-foreground: oklch(0.96 0.012 85);
+  --border: oklch(0.22 0.005 260);         /* líneas 1px gris oscuro */
+  --input: oklch(0.16 0.004 260);
+  --ring: oklch(0.68 0.24 38);
+
+  --shadow-elegant: none;
+  --shadow-soft: none;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.14 0.004 260);
+  --sidebar-foreground: oklch(0.96 0.012 85);
+  --sidebar-primary: oklch(0.68 0.24 38);
+  --sidebar-primary-foreground: oklch(0.11 0.003 260);
+  --sidebar-accent: oklch(0.18 0.004 260);
+  --sidebar-accent-foreground: oklch(0.96 0.012 85);
+  --sidebar-border: oklch(0.22 0.005 260);
+  --sidebar-ring: oklch(0.68 0.24 38);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "ss01";
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+  h1 {
+    font-weight: 500;
+    letter-spacing: -0.035em;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Reveal on scroll — sutil. */
+@keyframes rckt-reveal {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.rckt-reveal {
+  animation: rckt-reveal 0.7s ease-out both;
+}
+
+/* Cursor tipo terminal (blink) para la línea del hero. */
+@keyframes rckt-caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.rckt-caret {
+  display: inline-block;
+  width: 0.55ch;
+  background-color: currentColor;
+  animation: rckt-caret-blink 1s steps(1) infinite;
+  margin-left: 2px;
+  vertical-align: baseline;
+}
+
+/* Grid decorativo sobre el hero. */
+.rckt-grid-bg {
+  background-image:
+    linear-gradient(to right, oklch(0.22 0.005 260 / 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.22 0.005 260 / 0.6) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rckt-reveal { animation: none; opacity: 1; transform: none; }
+  .rckt-caret { animation: none; }
+}
